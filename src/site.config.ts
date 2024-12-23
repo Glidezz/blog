@@ -2,12 +2,12 @@ import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Chojan Shang",
+	author: "Nothin-m",
 	// Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-	title: "Data Is Dead, Long Live Value.",
+	title: "How are you",
 	// Meta property used as the default description meta property
 	description:
-		"Passionate about open source. Stay curious about knowledge. Build large-scale systems. Live alongside data.",
+		"passion!",
 	// HTML lang property, found in src/layouts/Base.astro L:18
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
