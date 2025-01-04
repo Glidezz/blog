@@ -33,7 +33,7 @@
 	}
 
 	.bg-logo {
-		background-image: /favicon.png;
+		background-image: url('https://raw.githubusercontent.com/Nothin-m/Nothin-m.github.io/refs/heads/main/public/favicon.png');
 		background-size: 100% 100%;
 	}
 

@@ -67,11 +67,45 @@ mandelbrotSerial(args->x0, args->y0, args->x1, args->y1, args->width, args->heig
 
 然后分析不同的向量宽度情况下，向量的利用率。
 
-| 向量宽度 | 利用率         |
+| 向量宽度 | 利用率   |
 | ---- | ----------- |
 | 2    | 91.619048%  |
 | 4    | 91.218638%  |
 | 8    | 91.312057%  |
 | 16   |  91.493056% |
 
+
+## prog4_sqrt
+
+本实验要我们实现ISPC加速。ISPC使用的是SIMD，因此最快的情况就是所有的数据都是2.999，最慢的就是N-1个1.0，1个2.999。加速的结果为
+
+1. 随机数
+    ```
+    [sqrt serial]:          [676.407] ms
+    [sqrt ispc]:            [145.619] ms
+    [sqrt task ispc]:       [12.536] ms
+                                    (4.65x speedup from ISPC)
+                                    (53.96x speedup from task ISPC)
+    ```
+2. 最好的情况
+    ```
+    [sqrt serial]:          [1738.086] ms
+    [sqrt ispc]:            [258.003] ms
+    [sqrt task ispc]:       [20.355] ms
+                                    (6.74x speedup from ISPC)
+                                    (85.39x speedup from task ISPC)
+    ```
+3. 最差的情况
+    ```
+    [sqrt serial]:          [17.687] ms
+    [sqrt ispc]:            [9.596] ms
+    [sqrt task ispc]:       [8.346] ms
+                                    (1.84x speedup from ISPC)
+                                    (2.12x speedup from task ISPC)
+    ```
+
+
+## prog5_saxpy
+
+prog5的加速效果不明显，是因为该计算频繁地访问内存，因此显存带宽是主要的瓶颈。所以并行加速效果不明显。
 
